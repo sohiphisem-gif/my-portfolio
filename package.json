@@ -1,6 +1,6 @@
 {
   "name": "cyber-site",
-  "homepage": "https://sohiphisem-gif.github.io/my-portfolio",
+  "homepage": "./","https://sohiphisem-gif.github.io/my-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
