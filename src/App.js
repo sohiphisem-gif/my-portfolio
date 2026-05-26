@@ -4,7 +4,7 @@ function App() {
   const [selectedImg, setSelectedImg] = useState(null);
 
   const categories = {
-   "مساحة (Surveying)": [
+    "مساحة (Surveying)": [
       { img: "/surveying.jpeg", title: "Surveying 1" },
       { img: "/surveying2.jpeg", title: "Surveying 2" },
       { img: "/QGIS.jpeg", title: "QGIS Mapping" },
@@ -18,7 +18,7 @@ function App() {
       { img: "/osint.jpeg", title: "OSINT" },
       { img: "/hacking.jpeg", title: "Ethical Hacking" },
       { img: "/hakar.jpeg", title: "Cyber Security" },
-       { img: "/edrak.jpeg", title: "Cyber Security" }
+      { img: "/edrak.jpeg", title: "Cyber Security" }
     ],
     "شبكات (Networking)": [
       { img: "/netwark.jpeg", title: "Networking" },
@@ -40,7 +40,7 @@ function App() {
       `}</style>
 
       <div className="header">
-        <img src="/my-photo.jpg" alt="Kareem Ahmed" className="avatar" />
+        <img src={process.env.PUBLIC_URL + "/my-photo.jpg"} alt="Kareem Ahmed" className="avatar" />
         <div>
           <h1 style={{ margin: 0, fontSize: '2.5rem' }}>Kareem Ahmed Mahmoud</h1>
           <p style={{ margin: '5px 0 0 0', color: '#94a3b8', fontSize: '1.2rem' }}>Cyber Security & Site Engineering Specialist</p>
@@ -52,8 +52,8 @@ function App() {
           <h2 className="section-title">{cat}</h2>
           <div className="gallery">
             {categories[cat].map((item, i) => (
-              <div key={i} className="cert-card" onClick={() => setSelectedImg(item.img)}>
-                <img src={item.img} alt={item.title} className="cert-img" />
+              <div key={i} className="cert-card" onClick={() => setSelectedImg(process.env.PUBLIC_URL + item.img)}>
+                <img src={process.env.PUBLIC_URL + item.img} alt={item.title} className="cert-img" />
               </div>
             ))}
           </div>
@@ -65,18 +65,14 @@ function App() {
           <img src={selectedImg} style={{ maxWidth: '90%', maxHeight: '90%', borderRadius: '12px' }} alt="Certificate Full View" />
         </div>
       )}
-      {/* جزء التذييل النهائي */}
+
       <footer style={{ marginTop: '80px', padding: '40px', borderTop: '1px solid #334155', textAlign: 'center', color: '#94a3b8' }}>
         <p style={{ fontSize: '1rem', lineHeight: '1.6', maxWidth: '800px', margin: '0 auto' }}>
           هذا الموقع يعرض الشهادات الاحترافية التي حصل عليها المهندس/ <strong>كريم أحمد محمود</strong>. 
-          جميع الشهادات صادرة من جهات تعليمية مرموقة ومعتمدة، تشمل: 
-          <strong> معهد تكنولوجيا المعلومات (ITI)</strong>، 
-          <strong> منصة معارف (Mind Luster)</strong>، 
-          ومؤسسة الملكة رانيا للتعليم والتنمية بالشراكة مع <strong>معهد ماساتشوستس للتكنولوجيا (MIT)</strong>.
           <br /><br />
           <span style={{ color: '#38bdf8' }}>
-             ملاحظة: جميع الشهادات الموضحة تحتوي على رمز استجابة سريع  
-            يمكن التحقق من صحتها ومصداقيتها مباشرة من خلال المنصات التعليمية التابعة لها.
+               ملاحظة: جميع الشهادات الموضحة تحتوي على رمز استجابة سريع 
+             يمكن التحقق من صحتها ومصداقيتها مباشرة من خلال المنصات التعليمية التابعة لها.
           </span>
         </p>
       </footer>
